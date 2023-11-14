@@ -66,3 +66,35 @@ body {
   box-shadow: 0 0 13px 13px rgba(26, 188, 156, 0.7);
   cursor: pointer;
 }
+
+@media screen and (max-width: 580px) {
+
+  .body {
+    width: 100vw;
+  }
+  .App {
+    width: 375px;
+    height: 345px;
+  }
+
+  .dividerDesktop{
+    display: none;
+  }
+
+  .dividerMobile {
+    display: block;
+    margin-bottom: 60px;
+  }
+
+  .quote {
+    font-size: 24px;
+  }
+
+  .heading {
+    margin-top: 40px;
+  }
+
+  .dice-container{
+    top: 315px;
+  }
+}
