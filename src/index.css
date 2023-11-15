@@ -75,6 +75,7 @@ body {
   .App {
     width: 375px;
     height: 345px;
+    margin-inline: 5px;
   }
 
   .dividerDesktop{
