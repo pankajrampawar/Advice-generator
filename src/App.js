@@ -8,34 +8,39 @@ function App() {
 
   const[quote, setQuote] = React.useState('');
   const[id, setId] = React.useState('');
+  const [loading, setLoading] = React.useState(false);
 
-  // const response = await axios.get('https://api.adviceslip.com/advice');
-  // console.log(response.data);
-  
-  async function fetchData() {
+
+  // effect hook for fetching the advice from api
+
+  const fetchData = async () => {
     try {
-      const response = await axios.get('https://api.adviceslip.com/advice')
-      console.log(response);
+      const response = await axios.get('https://api.adviceslip.com/advice');
       setQuote(response.data.slip.advice);
       setId(response.data.slip.id);
+      setLoading(false);
     } catch (error) {
-      console.error("error: ", error);
+      alert("error: ", error);
     }
-  }
-  fetchData();
+  };
+  
+  React.useEffect(()=>{
+    fetchData();
+  }, [])
 
   const handleClick = ()=>{
+    setLoading(true);
     fetchData();
   }
 
   return (
     <div className="App">
-      <div className="heading">ADVICE #{id}</div>
-      <p className="quote">{quote}</p>
-      <img className="dividerMobile" src={dividerImageMobile}/>
-      <img className="dividerDesktop" src={dividerImageDesktop}/>
+      <div className="heading">{ loading ? "Loading.." : "ADVICE #"+id}</div>
+      <p className="quote">{ loading? "..." : quote}</p>
+      <img className="dividerMobile" src={dividerImageMobile}   alt="Divider"/>
+      <img className="dividerDesktop" src={dividerImageDesktop} alt="Divider"/>
       <div className="dice-container"  onClick={handleClick}>
-        <img className="dice" src={dice} alt='dice image'/>
+        <img className="dice" src={dice} alt="dice image"/>
       </div>
     </div>
   );
