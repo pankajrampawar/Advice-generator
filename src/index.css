@@ -52,7 +52,7 @@ body {
 }
 .dice-container {
   position: absolute;
-  top: 360px;
+  top: 330px;
   background-color: hsl(150, 100%, 66%);
   width: 60px;
   height: 60px;
