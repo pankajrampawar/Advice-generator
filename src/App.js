@@ -34,13 +34,38 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <div className="heading">{ loading ? "Loading.." : "ADVICE #"+id}</div>
-      <p className="quote">{ loading? "..." : quote}</p>
-      <img className="dividerMobile" src={dividerImageMobile}   alt="Divider"/>
-      <img className="dividerDesktop" src={dividerImageDesktop} alt="Divider"/>
-      <div className="dice-container"  onClick={handleClick}>
-        <img className="dice" src={dice} alt="dice image"/>
+    <div className="bg-dark-blue h-screen w-screen flex justify-center items-center ">
+
+      {/* this is the main box */}
+      <div 
+        className='bg-box md:h-80 md:w-box rounded-3xl shadow-xl flex flex-col justify-between items-center font-custom absolute w-box-sm h-box'>
+        
+          {/* Contains Advice Part */}
+         <div 
+          className="text-nn-green tracking-advice mt-9 text-xs">
+            { loading ? "Loading.." : "ADVICE #"+id}
+         </div>
+         
+          {/* contains quote */}
+         <p 
+          className="text-light-cyan text-quote mx-9 mt-9 text-center">
+            { loading? "..." : '"'+ quote + '"'}
+         </p>
+         
+          {/* Contains divider image for mobiel and desktop  */}
+
+          <div className='flex-grow'></div>
+          <img className="block sm:block md:hidden lg:hidden xl:hidden " src={dividerImageMobile} alt="Divider"/>
+          <img className="hidden sm:hidden md:block lg:block xl:block " src={dividerImageDesktop} alt="Divider"/>
+         
+          {/* contains dice div and within it it's image */}
+         <div 
+          className="h-14 w-14 bg-nn-green flex justify-center items-center rounded-full relative top-7 mt-2"  
+          onClick={handleClick}
+         >
+          <img className="dice" src={dice} alt="dice"/>
+         </div>
+
       </div>
     </div>
   );

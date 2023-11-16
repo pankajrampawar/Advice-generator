@@ -1,101 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&family=Roboto:wght@400;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-
-
-* {
-  padding: 0;
-  margin: 0;
-  font-family: 'Manrope'
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&family=Roboto:wght@400;700&display=swap');
+.font-custom {
+  font-family: Manrope, sans-sarif;
 }
 
 body {
   background-color: hsl(218, 23%, 16%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.App {
-  width: 590px;
-  height: 360px;
-  background-color: hsl(217, 19%, 24%);
-  border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-}
-
-.heading {
-  color: hsl(150, 100%, 66%);
-  margin-top: 60px;
-  letter-spacing: 4px;
-  font-size: 15px;
-}
-
-.quote {
-  font-size: 28px;
-  color: hsl(193, 38%, 86%);
-  margin-left: 70px;
-  margin-right: 70px;
-  text-align: center;
-}
-
-.dividerMobile {
-  display: none;
-}
-
-.dividerDesktop {
-  margin-bottom: 80px;
-}
-.dice-container {
-  position: absolute;
-  top: 330px;
-  background-color: hsl(150, 100%, 66%);
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.dice-container:hover {
-  box-shadow: 0 0 13px 13px rgba(26, 188, 156, 0.7);
-  cursor: pointer;
-}
-
-@media screen and (max-width: 580px) {
-
-  .body {
-    width: 100vw;
-  }
-  .App {
-    width: 375px;
-    height: 345px;
-    margin-inline: 5px;
-  }
-
-  .dividerDesktop{
-    display: none;
-  }
-
-  .dividerMobile {
-    display: block;
-    margin-bottom: 60px;
-  }
-
-  .quote {
-    font-size: 24px;
-  }
-
-  .heading {
-    margin-top: 40px;
-  }
-
-  .dice-container{
-    top: 315px;
-  }
 }
